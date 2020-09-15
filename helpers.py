@@ -1,4 +1,6 @@
 import os, math, requests
+from dotenv import load_dotenv
+load_dotenv()
 
 def time(time_played):
     """Convert seconds to days, hours, minutes"""
@@ -104,10 +106,11 @@ def multiplayer(username, code, platform):
     """returns the users multiplayer stats"""
 
     url = f"https://call-of-duty-modern-warfare.p.rapidapi.com/multiplayer/{username}%2523{code}/{platform}"
+    api_key = os.getenv("api_key")
 
     headers = {
         'x-rapidapi-host': "call-of-duty-modern-warfare.p.rapidapi.com",
-        'x-rapidapi-key': "8264ad8a7bmshbb5f2440c32580bp1acd9bjsnb19fc39793df"
+        'x-rapidapi-key': api_key
     }
 
     response = requests.request("GET", url, headers=headers)
@@ -239,14 +242,14 @@ def multiplayer(username, code, platform):
     return stats
 
 def war(username, code, platform):
-
-
     """Get user's warzone stats"""
+
     url = f"https://call-of-duty-modern-warfare.p.rapidapi.com/warzone/{username}%2523{code}/{platform}"
+    api_key = os.getenv("api_key")
 
     headers = {
     'x-rapidapi-host': "call-of-duty-modern-warfare.p.rapidapi.com",
-    'x-rapidapi-key': "8264ad8a7bmshbb5f2440c32580bp1acd9bjsnb19fc39793df"
+    'x-rapidapi-key': api_key
     }
 
     response = requests.request("GET", url, headers=headers)
