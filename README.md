@@ -1,7 +1,7 @@
 # Cod Zone
 Cod Zone is a simple tracker that allows call of duty modern warfare players on all platforms to see their statistics for multiplayer and warzone! The tracker only requires the player's username, hashtag and platform to output their stats!
 
-The goal of this project was to practice HTML, CSS, JavaScript front-end script, while building the back-end in Python using Flask.
+The goal of this project was to practice HTML, CSS, JavaScript front-end, while building the back-end in Python using Flask.
 
 
 ## Getting Started
