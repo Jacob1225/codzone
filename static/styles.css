@@ -1,0 +1,636 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    color: black;
+}
+
+button
+{
+    margin-top: 1.5em;
+}
+
+.navbar
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+/* colors for brand */
+nav .navbar-brand .orange
+{
+    color: orange;
+    font-family: 'Rubik Mono One', sans-serif;
+}
+nav .navbar-brand .black
+{
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
+/* Styles for homepage */
+#home
+{
+    height: 80%;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 20px;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 68px -6px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+#home .image
+{
+    width: 50%;
+    height: 100%;
+    padding: 0 50px;
+}
+
+#home .image img
+{
+    width: 100%;
+    height: 100%;
+}
+
+#home .form
+{
+    background: #ffa500;
+    padding: 50px;
+    width: 50%;
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+
+#home .welcome
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#home .welcome h1
+{
+    font-family: 'Lobster', cursive;
+    margin-top: 1em;
+}
+
+#home .welcome p
+{
+    font-family: 'Acme', sans-serif;
+    font-size: large;
+}
+
+#home .form .textbox
+{
+    display: flex;
+
+}
+#home .form input
+{
+    width: 90%;
+    margin: 10px;
+    text-align: center;
+    border: 3px solid black;
+    color: black;
+}
+
+#home .form select
+{
+    width: 90%;
+    margin: 10px;
+    align-items: center;
+    border: 3px solid black;
+    color: black;
+}
+
+#home .form .btn
+{
+    border-radius: 20px;
+    background: transparent;
+    border: 3px solid black;
+    font-family: 'Acme', sans-serif;
+    width: 80%;
+    margin: 50px 30px 30px 30px;
+    transition: 1s;
+}
+
+#home .form .btn:hover
+{
+    background-color: black;
+    color: white;
+}
+
+/* Styles for first statistics page*/
+.response
+{
+   margin: 15px 50px 0px 50px;
+   display: flex;
+   flex-direction: column;
+   font-family: 'Acme', sans-serif;
+}
+
+/* Style for the header with players overall stats*/
+.response .statistics
+{
+    display: flex;
+    margin: auto;
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    box-shadow: 10px 10px 68px -6px rgba(0,0,0,0.5);
+}
+
+.response .statistics .player
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+    height: 100%;
+    background: orange;
+    border-radius: 2px;
+}
+
+.response .statistics .player .level
+{
+    display: flex;
+    width: 60%;
+    margin: 20px auto 0px auto;
+}
+
+.response .statistics .player .level p
+{
+    font-size: 20px;
+}
+
+.response .statistics .player .lvlImg
+{
+    width: 25%;
+    height: 100%;
+    margin-right: 5px;
+}
+
+.response .statistics .player .lvlImg img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.response .avatar
+{
+   width: 50%;
+    height: 100%;
+    border-radius: 50%;
+    background: white;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.response .avatar img
+{
+    height: 100%;
+    width: 100%;
+}
+
+.response .username
+{
+    margin: 25px auto 25px auto;
+    font-size: 20px;
+}
+
+.response .info
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background: white;
+    border-radius: 5px;
+}
+
+.response .info .worldImg
+{
+    width: 15%;
+    height: 100%;
+}
+
+.response .info .worldImg img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.response .info .overall
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: orange;
+}
+
+.response .info .overall h2
+{
+    margin: 25px;
+}
+
+.response .info .overall .overstats
+{
+    display: flex;
+    justify-content: center;
+    width: 25%;
+}
+
+.response .info .overall .overstats .time
+{
+    margin: auto;
+}
+
+.response .info .overall .overstats .matchesPlayed
+{
+    margin: auto 5px;
+}
+
+.info .score
+{
+    display: flex;
+    height: 100%;
+}
+
+.info .score .scoreCard
+{
+   display: flex;
+    justify-content: center;
+    height: 75%;
+    width: 25%;
+    background-color: orange;
+    margin: 20px auto;
+    border-radius: 5px;
+    transition: 1s;
+}
+
+.info .score .scoreCard:hover
+{
+    transform: scale(1,1.1);
+}
+
+.info .score .scoreCard .cup
+{
+    width: 28%;
+    height: 75%;
+    margin: 10px;
+}
+
+.info .score .scoreCard .cup img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.info .score .scoreCard .ribbon
+{
+    width: 20%;
+    height: 75%;
+}
+
+.info .score .scoreCard .ribbon img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.info .score .scoreCard .scoreStats
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 10px 10px 0px;
+}
+
+.info .score .scoreCard .scoreStats h4
+{
+    margin: 10px 10px 0px 0px;
+    font-size: 24px;
+}
+
+.info .score .scoreCard .scoreStats .number
+{
+   font-size: 20px;
+   text-align: center;
+}
+
+.response .topCards
+{
+    display: flex;
+}
+
+.response .stat
+{
+    border-radius: 10px;
+    background-color: orange;
+    margin-bottom: 20px;
+}
+
+.statistics .inner-container
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.statistics .inner-container .stats
+{
+    display: flex;
+    background-color: orange;
+    width: 100%;
+    justify-content: center;
+}
+
+.statistics .inner-container .stats h2
+{
+    padding: 10px
+}
+
+.statistics .inner-container .stats .statImg
+{
+    padding: 10px;
+    width: 8%;
+    height: 100%;
+
+}
+
+.statistics .inner-container .stats .statImg img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.statistics .inner-container .panels
+{
+
+}
+
+.statistics .inner-container .panels .panel-container
+{
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.statistics .inner-container .panels .panel-container .panel
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    width: 20%;
+    transition: 1s;
+}
+
+.statistics .inner-container .panels .panel-container .panel:hover
+{
+    transform: scale(1,1.2);
+}
+
+.panels .panel-container .panel .topbar
+{
+    background-color: orange;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.panels .panel-container .panel .panel-text
+{
+    background-color: #f0ede4;
+    border-radius: 3px;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.statistics .inner-container .mainInfo .topRow
+{
+
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 3px;
+}
+
+.statistics .inner-container .mainInfo .topRow .rowStat
+{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    margin-bottom: 20px;
+    transition: 1s;
+}
+
+.statistics .inner-container .mainInfo .topRow .rowStat:hover
+{
+    transform: scale(1,1.2);
+}
+
+.mainInfo .topRow .rowStat .head
+{
+    background-color: orange;
+    border-radius: 3px;
+}
+
+.mainInfo .topRow .rowStat .head h4
+{
+    text-align: center;
+    padding: 10px;
+}
+
+.mainInfo .topRow .rowStat .output
+{
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #f0ede4;
+}
+
+.statistics .accuracy-container
+{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+.statistics .overallAccuracy
+{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f0ede4;
+    border-radius: 3px;
+    transition: 1s;
+}
+
+.statistics .overallAccuracy:hover
+{
+    transform: scale(1,1.2);
+}
+
+.statistics .overallAccuracy .accBox
+{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.statistics .overallAccuracy .accBox .accImg
+{
+    width: 8%;
+    height: 100%;
+    margin: 0px 10px; 10px 0px;
+}
+
+.statistics .overallAccuracy .accBox .accImg img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.statistics .overallAccuracy .accBox h4
+{
+    margin: 10px 0px 10px 0px;
+}
+
+.statistics .overallAccuracy .accuracy
+{
+    text-align: center;
+    font-size: 20px;
+}
+
+.statistics .top-container
+{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.statistics .top-container .topWeapon
+{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin: 15px;
+    transition: 1s;
+}
+
+.statistics .top-container .topWeapon:hover
+{
+    transform: scale(1,1.1);
+}
+
+.statistics .top-container .topWeapon .topHeader
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.top-container .topWeapon .topHeader .topHead
+{
+    display: flex;
+    margin: 20px;
+}
+
+ .topHeadImg
+{
+    width: 6%;
+    height: 100%;
+}
+
+.topHead .topHeadImg img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.top-container .topWeapon .topHeader .topHead h2
+{
+    color: #e8b923;
+}
+
+.top-container .topWeapon .topHeader .topWeaponStats
+{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    margin: 10px 0px;
+}
+
+.top-container .topWeapon .topHeader .topWeaponStats .wpnStats
+{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    font-size: 25px;
+    margin: 0px 20px;
+}
+
+.top-container .topWeapon .topHeader .topWeaponStats .wpnStats .singleStat h3
+{
+    color: #e8b923;;
+}
+
+.topWeaponStats .wpnStats .wpnImg
+{
+    height: 100%;
+    width: 35%;
+}
+
+.topWeaponStats .wpnStats .wpnImg img
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* Media Queries*/
+@media(max-width: 665px)
+{
+    .image
+    {
+        display: none;
+    }
+
+    #home .form
+    {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width: 990px) and (min-width: 665px)
+{
+    .btn
+    {
+        margin: 5px;
+        padding: 5px;
+        width: 100%;
+    }
+}
+
+
+
+

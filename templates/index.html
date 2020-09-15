@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock%}
+
+{% block main %}
+    <div id="home">
+        <div class="image">
+            <img src="/static/pic.svg">
+        </div>
+        <section class="form">
+            <header class="welcome">
+                <h1>Welcome to <span class="orange">COD</span> ZONE</h1>
+                <p>Search for all your Modern Warfare statistics</p>
+            </header>
+            <form action="/" method="post">
+                <div class="textbox">
+                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" required>
+                </div>
+                <div class="textbox">
+                    <input autocomplete="off" autofocus class="form-control" name="code" placeholder="Hashtag" type="text" required>
+                </div>
+                <div class="textbox">
+                <select name ="platform" id="inputState" class="form-control">
+                    <option selected>Select your Platform</option>
+                    <option>Battle Net</option>
+                    <option>Playstation Network</option>
+                    <option>Xbox Live</option>
+                </select>
+                </div>
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+{% endblock %}

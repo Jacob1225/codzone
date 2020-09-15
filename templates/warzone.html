@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Warzone
+{% endblock%}
+
+{% block main %}
+    <div class="response">
+        <header class="statistics">
+            <div class="player">
+                <div class="level">
+                    <div class="lvlImg">
+                        <img src="/static/rank.png">
+                    </div>
+                    <p>level {{ multiResponse.level }}</p>
+                </div>
+                <div class="avatar"><img src="/static/controller.svg"/></div>
+                <div class="username">{{ multiResponse.username }}</div>
+            </div>
+            <div class="info">
+                <div class="overall">
+                    <h2>Lifetime Overview</h2>
+                    <div class ="overstats">
+                        <div class="worldImg">
+                            <img src="/static/clock.svg">
+                        </div>
+                        <div class="time">{{ playTime }} Play Time</div>
+                    </div>
+                    <div class="overstats">
+                        <div class="worldImg">
+                            <img src="/static/game-controller.svg">
+                        </div>
+                        <div class="matchesPlayed">{{ response.br_all.gamesPlayed | comma }} matches</div>
+                    </div>
+                </div>
+                <div class="score">
+                    <div class="scoreCard">
+                        <div class="ribbon">
+                            <img src="/static/first.svg">
+                        </div>
+                        <div class="scoreStats">
+                            <h4>Score/Game</h4>
+                            <div class="number">{{ scorePerGame | format | comma }}</div>
+                        </div>
+                    </div>
+                    <div class="scoreCard">
+                        <div class="cup">
+                            <img src="/static/award.svg">
+                        </div>
+                        <div class="scoreStats">
+                            <h4>Score</h4>
+                            <div class="number">{{ response.br.score | comma }}</div>
+                        </div>
+                    </div>
+                    <div class="scoreCard">
+                        <div class="ribbon">
+                            <img src="/static/first.svg">
+                        </div>
+                        <div class="scoreStats">
+                            <h4>Score/Min</h4>
+                            <div class="number">{{ response.br.scorePerMinute | format | comma }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="statistics">
+            <div class="inner-container">
+                <div class="stats">
+                    <div class="statImg">
+                        <img src="/static/statistics.svg">
+                    </div>
+                    <h2>Warzone Stats</h2>
+                </div>
+                <div class="panels">
+                    <div class="panel-container">
+                        <div class="panel">
+                            <div class="topbar">
+                                <h4>Wins</h4>
+                            </div>
+                            <div class="panel-text">{{ response.br_all.wins | comma}}</div>
+                        </div>
+                        <div class="panel">
+                            <div class="topbar">
+                                <h4>Top 5</h4>
+                            </div>
+                            <div class="panel-text">{{ response.br_all.topFive | comma }}</div>
+                        </div>
+                        <div class="panel">
+                            <div class="topbar">
+                                <h4>K/D Ratio</h4>
+                            </div>
+                            <div class="panel-text">{{ response.br_all.kdRatio | format | comma}}%</div>
+                        </div>
+                        <div class="panel">
+                            <div class="topbar">
+                                <h4>Kills</h4>
+                            </div>
+                            <div class="panel-text">{{ response.br_all.kills | comma }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainInfo">
+                    <div class="topRow">
+                        <div class="rowStat">
+                            <div class="head">
+                                <h4>Top 10</h4>
+                            </div>
+                            <div class="output">{{ response.br_all.topTen | comma }}</div>
+                        </div>
+                        <div class="rowStat">
+                            <div class="head">
+                                <h4>Downs</h4>
+                            </div>
+                            <div class="output">{{ response.br.downs | comma }}</div>
+                        </div>
+                        <div class="rowStat">
+                            <div class="head">
+                                <h4>Deaths</h4>
+                            </div>
+                            <div class="output">{{ response.br_all.deaths | comma }}</div>
+                        </div>
+                        <div class="rowStat">
+                            <div class="head">
+                                <h4>Top 25</h4>
+                            </div>
+                            <div class="output">{{ response.br_all.topTwentyFive | comma }}</div>
+                        </div>
+                        <div class="rowStat">
+                            <div class="head">
+                                <h4>Revives</h4>
+                            </div>
+                            <div class="output">{{ response.br_all.revives | comma }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

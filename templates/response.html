@@ -1,0 +1,234 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Response
+{% endblock %}
+
+{% block main %}
+    <div class="response">
+        <header class="statistics">
+            <div class="player">
+                <div class="level">
+                    <div class="lvlImg">
+                        <img src="/static/rank.png">
+                    </div>
+                    <p>level {{ response.level }}</p>
+                </div>
+                <div class="avatar"><img src="/static/controller.svg"/></div>
+                <div class="username">{{ response.username }}</div>
+            </div>
+            <div class="info">
+                <div class="overall">
+                    <h2>Lifetime Overview</h2>
+                    <div class ="overstats">
+                        <div class="worldImg">
+                            <img src="/static/clock.svg">
+                        </div>
+                        <div class="time">{{ playTime }} Play Time</div>
+                    </div>
+                    <div class="overstats">
+                        <div class="worldImg">
+                            <img src="/static/game-controller.svg">
+                        </div>
+                        <div class="matchesPlayed">{{ response.lifetime.all.properties.gamesPlayed | comma }} matches</div>
+                    </div>
+                </div>
+                <div class="score">
+                    <div class="scoreCard">
+                        <div class="ribbon">
+                            <img src="/static/first.svg">
+                        </div>
+                        <div class="scoreStats">
+                            <h4>Score/Game</h4>
+                            <div class="number">{{ response.lifetime.all.properties.scorePerGame | format | comma }}</div>
+                        </div>
+                    </div>
+                    <div class="scoreCard">
+                        <div class="cup">
+                            <img src="/static/award.svg">
+                        </div>
+                        <div class="scoreStats">
+                            <h4>Score</h4>
+                            <div class="number">{{ response.lifetime.all.properties.score | comma }}</div>
+                        </div>
+                    </div>
+                    <div class="scoreCard">
+                        <div class="ribbon">
+                            <img src="/static/first.svg">
+                        </div>
+                        <div class="scoreStats">
+                            <h4>Score/Min</h4>
+                            <div class="number">{{ response.lifetime.all.properties.scorePerMinute | format | comma }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="statistics">
+            <div class="inner-container">
+                <div class="stats">
+                    <div class="statImg">
+                        <img src="/static/statistics.svg">
+                    </div>
+                    <h2>Lifetime Stats</h2>
+                </div>
+                <div class="panels">
+                    <div class="panel-container">
+                        <div class="panel">
+                            <div class="topbar">
+                                <h4>K/D Ratio </h4>
+                            </div>
+                            <div class="panel-text">{{ response.lifetime.all.properties.kdRatio | format | comma}}%</div>
+                        </div>
+                        <div class="panel">
+                            <div class="topbar">
+                                <h4>Kills</h4>
+                            </div>
+                            <div class="panel-text">{{ response.lifetime.all.properties.kills | comma }}</div>
+                        </div>
+                        <div class="panel">
+                            <div class="topbar">
+                                <h4>Win%</h4>
+                            </div>
+                            <div class="panel-text">{{ response.lifetime.all.properties.winLossRatio | format | comma}}%</div>
+                        </div>
+                        <div class="panel">
+                            <div class="topbar">
+                                <h4>Wins</h4>
+                            </div>
+                            <div class="panel-text">{{ response.lifetime.all.properties.wins | comma }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainInfo">
+                    <div class="topRow">
+                        <div class="rowStat">
+                            <div class="head">
+                                <h4>Killstreak</h4>
+                            </div>
+                            <div class="output">{{ response.lifetime.all.properties.bestKillStreak | comma }}</div>
+                        </div>
+                        <div class="rowStat">
+                            <div class="head">
+                                <h4>Losses</h4>
+                            </div>
+                            <div class="output">{{ response.lifetime.all.properties.losses | comma }}</div>
+                        </div>
+                        <div class="rowStat">
+                            <div class="head">
+                                <h4>Deaths</h4>
+                            </div>
+                            <div class="output">{{ response.lifetime.all.properties.deaths | comma }}</div>
+                        </div>
+                        <div class="rowStat">
+                            <div class="head">
+                                <h4>Assists</h4>
+                            </div>
+                            <div class="output">{{ response.lifetime.all.properties.assists | comma }}</div>
+                        </div>
+                        <div class="rowStat">
+                            <div class="head">
+                                <h4>Ties</h4>
+                            </div>
+                            <div class="output">{{ response.lifetime.all.properties.ties | comma }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="statistics">
+            <div class="accuracy-container">
+                <div class="overallAccuracy">
+                    <div class="accBox">
+                        <div class="accImg">
+                            <img src="/static/target.svg">
+                        </div>
+                        <h4>Accuracy</h4>
+                    </div>
+                    <div class="accuracy">{{ accuracy | format | comma }}%</div>
+                </div>
+                 <div class="overallAccuracy">
+                    <div class="accBox">
+                        <div class="accImg">
+                            <img src="/static/headshot.svg">
+                        </div>
+                        <h4>Headshots</h4>
+                    </div>
+                    <div class="accuracy">{{ response.lifetime.all.properties.headshots | comma }}</div>
+                </div>
+            </div>
+        </section>
+        <section class="statistics">
+            <div class="top-container">
+                <div class="topWeapon">
+                    <div class="topHeader">
+                        <div class="topHead">
+                            <div class="topHeadImg">
+                                <img src="/static/medal.svg">
+                            </div>
+                            <h2>Top Weapon</h2>
+                        </div>
+                        <div class="topWeaponStats">
+                            <div class="wpnStats" style="align-items: center;">
+                                <div class="wpnImg">
+                                  <img src="/static/rifle.svg">
+                                </div>
+                                <h4>{{ topWeapon }}</h4>
+                            </div>
+                            <div class="wpnStats">
+                                <div class="singleStat">
+                                    <h3>Kills</h3>
+                                    <div class="wpnNumber">{{ topWpnKills | comma }}</div>
+                                </div>
+                                <div class="singleStat">
+                                    <h3>Deaths</h3>
+                                    <div class="wpnNumber">{{ topWpnDeaths | comma }}</div>
+                                </div>
+                            </div>
+                            <div class="wpnStats">
+                                <div class="singleStat">
+                                    <h3>K/D Ratio</h3>
+                                    <div class="wpnNumber">{{ topWpnRatio | format | comma }}%</div>
+                                </div>
+                                <div class="singleStat">
+                                    <h3>Headshots</h3>
+                                    <div class="wpnNumber">{{ topWpnHs | comma }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  <div class="topWeapon">
+                    <div class="topHeader">
+                        <div class="topHead">
+                            <div class="topHeadImg">
+                                <img src="/static/medal.svg">
+                            </div>
+                            <h2>Top Killstreak</h2>
+                        </div>
+                        <div class="topWeaponStats">
+                            <div class="wpnStats" style="align-items: center;">
+                                <div class="wpnImg">
+                                  <img src="/static/nuke.svg">
+                                </div>
+                                <h4>{{ topKillstreak }}</h4>
+                            </div>
+                            <div class="wpnStats">
+                                <div class="singleStat">
+                                    <h3>Uses</h3>
+                                    <div class="wpnNumber">{{ topKillstreakUses | comma }}</div>
+                                </div>
+                            </div>
+                            <div class="wpnStats">
+                                <div class="singleStat">
+                                    <h3>Awarded</h3>
+                                    <div class="wpnNumber">{{ topKillstreakAwarded| comma }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
